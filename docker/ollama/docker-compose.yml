@@ -1,0 +1,18 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: nxtfld-vllm
+    restart: unless-stopped
+    runtime: nvidia
+    ports:
+      - "${VLLM_PORT:-8000}:8000"
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HF_TOKEN}
+    command: >
+      --model ${VLLM_MODEL:-Qwen/Qwen2.5-Coder-14B-Instruct-AWQ}
+      --gpu-memory-utilization 0.90
+      --max-model-len 16384
+      --served-model-name local-llm
+    ipc: host
