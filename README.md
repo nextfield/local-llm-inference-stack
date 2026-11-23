@@ -1,4 +1,6 @@
-# Local LLM Inference Stack (`nextfield`)
+# <img src="nextfield_icon.ico" width="130" style="vertical-align: left">
+
+# Local LLM Inference Stack
 
 Praxisnahe Docker-Compose- und Python-Templates für das datenschutzkonforme Self-Hosting von Open-Weights-Sprachmodellen (LLMs) auf eigener NVIDIA-GPU-Hardware.
 
